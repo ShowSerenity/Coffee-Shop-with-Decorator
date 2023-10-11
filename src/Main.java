@@ -21,13 +21,13 @@ public class Main {
             }
 
             Coffee coffee = null;
-            boolean isM = false;
+            boolean isMatchaLatte = false;
 
             switch (choice) {
                 case 1 -> coffee = new Chillapuccino();
                 case 2 -> {
                     coffee = new MatchaLatte();
-                    isM = true;
+                    isMatchaLatte = true;
                 }
                 case 3 -> coffee = new Frappuccino();
                 default -> {
@@ -55,11 +55,7 @@ public class Main {
                     case 2 -> coffee = new CaramelSyrup(coffee);
                     case 3 -> coffee = new WhippedCream(coffee);
                     case 4 -> {
-                        if (isM) {
-                            coffee = new SteamedMilk(coffee);
-                        } else {
-                            System.out.println("Steamed Milk is only available for Matcha Latte.");
-                        }
+                        System.out.println("Steamed Milk is only available for Matcha Latte.");
                     }
                     default -> System.out.println("Invalid choice. Please select a valid option.");
                 }
